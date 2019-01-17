@@ -1,4 +1,4 @@
-FROM webdevops/php-apache:7.2
+FROM webdevops/php-apache-dev:7.2
 
 # Environment variables
 ENV WEB_DOCUMENT_ROOT=/app/public
