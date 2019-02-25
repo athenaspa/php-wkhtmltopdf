@@ -37,5 +37,14 @@ RUN docker-service enable postfix \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Change user
+USER ${APPLICATION_USER}
+
+# Composer parallel install plugin
+RUN composer global require hirak/prestissimo
+
+# Container must start as root user
+USER root
+
 # Default work dir
 WORKDIR ${APPLICATION_PATH}
