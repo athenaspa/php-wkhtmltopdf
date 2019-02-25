@@ -37,6 +37,9 @@ RUN docker-service enable postfix \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Imap uninstall workaround
+RUN rm /usr/local/etc/php/conf.d/docker-php-ext-imap.ini    
+
 # Change user
 USER ${APPLICATION_USER}
 
